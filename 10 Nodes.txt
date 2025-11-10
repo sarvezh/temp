@@ -14,10 +14,10 @@ int main() {
         if (v > maxNode) maxNode = v;
     }
 
-    // Total nodes = largest node number + 1 (for 0-based indexing)
     int totalNodes = maxNode + 1;
 
     printf("Number of nodes in the graph: %d\n", totalNodes);
 
     return 0;
 }
+
