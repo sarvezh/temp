@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int edges, u, v;
+    int maxNode = -1;
+
+    printf("Enter number of edges: ");
+    scanf("%d", &edges);
+
+    printf("Enter edges (u v):\n");
+    for (int i = 0; i < edges; i++) {
+        scanf("%d %d", &u, &v);
+        if (u > maxNode) maxNode = u;
+        if (v > maxNode) maxNode = v;
+    }
+
+    // Total nodes = largest node number + 1 (for 0-based indexing)
+    int totalNodes = maxNode + 1;
+
+    printf("Number of nodes in the graph: %d\n", totalNodes);
+
+    return 0;
+}

@@ -1,0 +1,94 @@
+    #include <stdio.h>
+
+    /*      Bubble Sort      */
+
+    void BubbleSort() {
+        int size, temp;
+        int arr[20];
+
+        printf("Enter size of array:");
+        scanf("%d", &size);
+        printf("Enter array elements: ");
+        for (int i = 0; i < size; i++) {
+            scanf("%d", &arr[i]);
+        }
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size - i - 1; j++) {
+                if (arr[j] > arr[j+1]) {
+                    temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            } 
+        }
+        
+        printf("The sorted array is:");
+        for (int i = 0; i < size; i++) {
+            printf("%d, ", arr[i]);
+        }
+    }
+
+    /*      Insertion Sort      */
+
+    void InsertionSort() {
+        int i, j, size, key;
+        int arr[20];
+
+        printf("Enter size of array:");
+        scanf("%d", &size);
+        printf("Enter array elements: ");
+        for (int i = 0; i < size; i++) {
+            scanf("%d", &arr[i]);
+        }
+
+        for (int i = 1; i < size; i++) {
+        key = arr[i];
+        j = i - 1;
+
+        while (arr[j] > key && j >= 0)
+        {
+            arr [j+1] = arr[j];
+            --j; }
+        arr[j+1] = key; }
+
+        printf("The sorted array is:");
+        for (int i = 0; i < size; i++) {
+            printf("%d, ", arr[i]);
+        }
+    }
+
+    /*      Selection Sort      */
+
+    void SelectionSort() {
+        int i, j, size, temp;
+        int arr[20];
+
+        printf("Enter size of array:");
+        scanf("%d", &size);
+        printf("Enter array elements: ");
+        for (int i = 0; i < size; i++) {
+            scanf("%d", &arr[i]);
+        }
+
+        for (int i = 0; i < size; i++) {
+            for (int j = i + 1; j < size; j++) {
+                if (arr[j]<arr[i]) {
+                    temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+        }
+        printf("The sorted array is:");
+        for (int i = 0; i < size; i++) {
+            printf("%d, ", arr[i]);
+        }
+    }
+
+    int main() {
+        BubbleSort();
+        InsertionSort();
+        SelectionSort();
+        return 0;
+    }
